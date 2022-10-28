@@ -411,6 +411,8 @@ public class Lab3P2_IngridHernandez_12141186 {
                 }//fin del case 1
                 break;
                 case 2:{
+                    System.out.println("Ingrese la posicion del Personaje:");
+                    int pos = lea.nextInt();
                     
                 }//fin del case 2
                 break;
@@ -424,7 +426,16 @@ public class Lab3P2_IngridHernandez_12141186 {
                 }//fin del case 3
                 break;
                 case 4:{
-                    
+                    System.out.println("Ingrese la posicion del Personaje que desea eliminar:");
+                    int p = lea.nextInt();
+                    if (p < per.size() && per.get(p) instanceof Personaje) {
+                        per.remove(p);
+                        System.out.println("Personaje Eliminado");
+                        
+                    } else {
+                        System.out.println("No existe el aula que busca");
+                        
+                    }
                 }//fin del case 3
                 break;
                 case 5:{
@@ -440,5 +451,10 @@ public class Lab3P2_IngridHernandez_12141186 {
             }//fin del switch
     }//fin while
     }
-    
+    public static void defaultpersonajes(){
+        per.add(new Clerigo ("Lucifer","Hielo","lamar","Elfo",5.7,8.4,23,40,97,87,"Increible","Zebes","lead"));
+         per.add(new Barbaro ("ligera",57,"Fer","Elfo",8.4,5.3,33,65,93,81,"Bosque","Crateria","offensive"));
+          per.add(new Mago ("Sanador","Juan","Mediano",9.3,4.6,29,20,101,54,"Fuerte","Norfair","Tank"));
+          per.add(new Mago ("Mago Negro","luis","Enano",6.5,8.4,29,20,101,85,"Veloz","Brinstar","Support"));
+    }
 }

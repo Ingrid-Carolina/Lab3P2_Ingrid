@@ -10,17 +10,17 @@ package lab3p2_ingridhernandez_12141186;
  * @author ADMINISTRADOR1
  */
 public class Personaje {
-    private String nombre;
-    private String raza;
-    private double estaura;
-    private double peso;
-    private int edad;
-    private int Ac;
-    private int Cs;
-    private int Hp;
-    private String descripcion;
-    private String nacionalidad;
-    private String Tp;
+    protected String nombre;
+    protected String raza;
+    protected double estaura;
+   protected double peso;
+   protected int edad;
+    protected int Ac;
+    protected int Cs;
+    protected int Hp;
+    protected String descripcion;
+   protected String nacionalidad;
+    protected String Tp;
     
 
     public Personaje() {
