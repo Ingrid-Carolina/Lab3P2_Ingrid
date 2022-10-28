@@ -6,6 +6,7 @@ package lab3p2_ingridhernandez_12141186;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -313,16 +314,16 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 int hp = 0;
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                     hp = 50;
+                                     hp = 43;
                                 } else if (tr == 2) {
                                     raza = "Enano";
-                                    hp = 88;
+                                    hp = 95;
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                    hp = 55;
+                                    hp = 54;
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                    hp= 46;
+                                    hp= 49;
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -332,8 +333,8 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 double peso = lea.nextDouble();
                                 System.out.println("Ingrese el edad del personaje: ");
                                 int edad = lea.nextInt();
-                                int ac = 20;
-                                int cs= 101;
+                                int ac = 50;
+                                int cs= 80;
                                 System.out.println("Ingrese la descripsion del personaje:");
                                 String desp = lea.next();
                                 System.out.println("Ingrese la nacionalidad del personaje:");
@@ -376,21 +377,21 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese la cantidad de robos exitosos:");
                                 int robo = lea.nextInt();
                                 System.out.println("Tipo del personaje esta clase Barbaro es:");
-                                System.out.println("1-Support");
+                                System.out.println("1-Spammer");
                                 System.out.println("2-Tank");
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv= lea.nextInt();
                                 String tp="" ; 
                                 if(rv == 1){
-                                tp = "Support";
+                                tp = "Spammer";
                                 }else if (rv == 2){
                                   tp = "Tank";  
                                 }else{
                                     System.out.println("No existe tipo de personaje");
                                     
                                 }
-                                 per.add(new Mago (mag, nom, raza, estatura, peso, edad,ac,cs,hp, desp, nac, tp));
-                                  System.out.println("ya se agrego la clase Mago con existo");
+                                 per.add(new Picaro (mag,robo, nom, raza, estatura, peso, edad,ac,cs,hp, desp, nac, tp));
+                                  System.out.println("ya se agrego la clase Picaro con existo");
                             }  
                             break;
                             case 5:
@@ -414,7 +415,12 @@ public class Lab3P2_IngridHernandez_12141186 {
                 }//fin del case 2
                 break;
                 case 3:{
-                    
+                   for (Object object : per) {
+                        if (object instanceof Personaje) {
+                            String message = String.format("[%d] %s%n", per.indexOf(object), object);
+                            System.out.println(message);
+                        }
+                    } 
                 }//fin del case 3
                 break;
                 case 4:{
