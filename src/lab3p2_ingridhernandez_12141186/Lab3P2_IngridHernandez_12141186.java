@@ -5,8 +5,9 @@
 package lab3p2_ingridhernandez_12141186;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -18,7 +19,9 @@ public class Lab3P2_IngridHernandez_12141186 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner lea = new Scanner(System.in);
+        Random r = new Random();
         defaultpersonajes();
+        int hp = 0;
         boolean centinela = true;
         
         while (centinela == true) {
@@ -59,19 +62,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("============================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                int ph = 0;
+                                
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                    ph = 53;
+                                    hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
-                                    ph = 90;
+                                    hp = 80 + r.nextInt(100);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                    ph = 50;
+                                    hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                    ph = 67;
+                                    hp = 40 + r.nextInt(75);
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -118,7 +121,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("============================================");
                                 String tp = "Lead";
                                 
-                                per.add(new Clerigo(dd, invo, nom, raza, estatura, peso, edad, ac, cs, ph, desp, nac, tp));
+                                per.add(new Clerigo(dd, invo, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Clerigo con existo");
                             }
                             break;
@@ -134,19 +137,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("==================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                int ph = 0;
+                                
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                    ph = 59;
+                                   hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
-                                    ph = 90;
+                                    hp = 80 + r.nextInt(100);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                    ph = 62;
+                                   hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                    ph = 59;
+                                   hp = 40 + r.nextInt(75);
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -223,7 +226,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     System.out.println("No existe tipo de personaje.");
                                 }
                                 
-                                per.add(new Barbaro(arm, px, nom, raza, estatura, peso, edad, ac, cs, ph, desp, nac, tp));
+                                per.add(new Barbaro(arm, px, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Barbaro con existo");
                             }
                             
@@ -240,19 +243,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("==================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                int hp = 0;
+                               
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                    hp = 50;
+                                    hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
-                                    hp = 88;
+                                    hp = 80 + r.nextInt(100);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                    hp = 55;
+                                    hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                    hp = 46;
+                                    hp = 40 + r.nextInt(75);
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -339,19 +342,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("=================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                int hp = 0;
+                                
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                    hp = 43;
+                                   hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
-                                    hp = 95;
+                                    hp = 80 + r.nextInt(1000);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                    hp = 54;
+                                   hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                    hp = 49;
+                                    hp = 40 + r.nextInt(75);
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -477,19 +480,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     System.out.println("=================================");
                                     int tr = lea.nextInt();
                                     String raza = "";
-                                    int hp = 0;
+                                    
                                     if (tr == 1) {
                                         raza = "Mediano";
-                                        hp = 43;
+                                       hp = 50 + r.nextInt(60);
                                     } else if (tr == 2) {
                                         raza = "Enano";
-                                        hp = 95;
+                                        hp = 80 + r.nextInt(100);
                                     } else if (tr == 3) {
                                         raza = "Elfo";
-                                        hp = 54;
+                                        hp = 50 + r.nextInt(70);
                                     } else if (tr == 4) {
                                         raza = "Humano";
-                                        hp = 49;
+                                       hp = 40 + r.nextInt(75);
                                     } else {
                                         System.out.println("no existe esa raza");
                                     }
@@ -590,7 +593,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                 }//fin del case 3
                 break;
                 case 5: {
-                    
+                    //Combate
                 }//fin del case 3
                 break;
                 case 6:
@@ -604,7 +607,7 @@ public class Lab3P2_IngridHernandez_12141186 {
     }
 
     public static void defaultpersonajes() {
-        per.add(new Clerigo("Lucifer", "Hielo", "lamar", "Elfo", 5.7, 8.4, 23, 40, 97, 87, "Increible", "Zebes", "lead"));
+        per.add(new Clerigo("Lucifer", "Hielo", "lamar", "Elfo", 5.7, 8.4, 23, 40, 97, 78, "Increible", "Zebes", "lead"));
         per.add(new Barbaro("ligera", 57, "Fer", "Elfo", 8.4, 5.3, 33, 65, 93, 81, "Bosque", "Crateria", "offensive"));
         per.add(new Mago("Sanador", "Juan", "Mediano", 9.3, 4.6, 29, 20, 101, 54, "Fuerte", "Norfair", "Tank"));
         per.add(new Mago("Mago Negro", "luis", "Enano", 6.5, 8.4, 29, 20, 101, 85, "Veloz", "Brinstar", "Support"));
