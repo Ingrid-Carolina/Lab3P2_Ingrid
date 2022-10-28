@@ -10,17 +10,19 @@ package lab3p2_ingridhernandez_12141186;
  */
 public class Barbaro extends Personaje {
     private String arma;
-
+    private int px;
     public Barbaro() {
     }
 
-    public Barbaro(String arma) {
+    public Barbaro(String arma,int px) {
         this.arma = arma;
+        this.px=px;
     }
 
-    public Barbaro(String arma, String nombre, String raza, double estaura, double peso, int edad, String descripcion, String nacionalidad, String Tp) {
-        super(nombre, raza, estaura, peso, edad, descripcion, nacionalidad, Tp);
+    public Barbaro(String arma,int px, String nombre, String raza, double estaura, double peso, int edad, int Ac, int Cs, int Hp, String descripcion, String nacionalidad, String Tp) {
+        super(nombre, raza, estaura, peso, edad, Ac, Cs, Hp, descripcion, nacionalidad, Tp);
         this.arma = arma;
+        this.px = px;
     }
 
     public String getArma() {
@@ -31,9 +33,19 @@ public class Barbaro extends Personaje {
         this.arma = arma;
     }
 
+    public int getPx() {
+        return px;
+    }
+
+    public void setPx(int px) {
+        this.px = px;
+    }
+
     @Override
     public String toString() {
-        return "Barbaro{" + "arma=" + arma + '}';
+        return super.toString() +"Barbaro{" + "arma=" + arma + ", px=" + px + '}';
     }
+
+    
     
 }

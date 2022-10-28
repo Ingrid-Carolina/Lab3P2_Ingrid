@@ -20,8 +20,8 @@ public class Clerigo extends Personaje {
         this.invocacion = invocacion;
     }
 
-    public Clerigo(String dios, String invocacion, String nombre, String raza, double estaura, double peso, int edad, String descripcion, String nacionalidad, String Tp) {
-        super(nombre, raza, estaura, peso, edad, descripcion, nacionalidad, Tp);
+    public Clerigo(String dios, String invocacion, String nombre, String raza, double estaura, double peso, int edad, int Ac, int Cs, int Hp, String descripcion, String nacionalidad, String Tp) {
+        super(nombre, raza, estaura, peso, edad, Ac, Cs, Hp, descripcion, nacionalidad, Tp);
         this.dios = dios;
         this.invocacion = invocacion;
     }

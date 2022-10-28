@@ -15,23 +15,32 @@ public class Personaje {
     private double estaura;
     private double peso;
     private int edad;
+    private int Ac;
+    private int Cs;
+    private int Hp;
     private String descripcion;
     private String nacionalidad;
     private String Tp;
+    
 
     public Personaje() {
     }
 
-    public Personaje(String nombre, String raza, double estaura, double peso, int edad, String descripcion, String nacionalidad, String Tp) {
+    public Personaje(String nombre, String raza, double estaura, double peso, int edad, int Ac, int Cs, int Hp, String descripcion, String nacionalidad, String Tp) {
         this.nombre = nombre;
         this.raza = raza;
         this.estaura = estaura;
         this.peso = peso;
         this.edad = edad;
+        this.Ac = Ac;
+        this.Cs = Cs;
+        this.Hp = Hp;
         this.descripcion = descripcion;
         this.nacionalidad = nacionalidad;
         this.Tp = Tp;
     }
+
+   
 
     public String getNombre() {
         return nombre;
@@ -97,10 +106,36 @@ public class Personaje {
         this.Tp = Tp;
     }
 
+    public int getAc() {
+        return Ac;
+    }
+
+    public void setAc(int Ac) {
+        this.Ac = Ac;
+    }
+
+    public int getCs() {
+        return Cs;
+    }
+
+    public void setCs(int Cs) {
+        this.Cs = Cs;
+    }
+
+    public int getHp() {
+        return Hp;
+    }
+
+    public void setHp(int Hp) {
+        this.Hp = Hp;
+    }
+
     @Override
     public String toString() {
-        return "Personaje{" + "nombre=" + nombre + ", raza=" + raza + ", estaura=" + estaura + ", peso=" + peso + ", edad=" + edad + ", descripcion=" + descripcion + ", nacionalidad=" + nacionalidad + ", Tp=" + Tp + '}';
+        return "Personaje{" + "nombre=" + nombre + ", raza=" + raza + ", estaura=" + estaura + ", peso=" + peso + ", edad=" + edad + ", Ac=" + Ac + ", Cs=" + Cs + ", Hp=" + Hp + ", descripcion=" + descripcion + ", nacionalidad=" + nacionalidad + ", Tp=" + Tp + '}';
     }
+
+    
     
     
 }
