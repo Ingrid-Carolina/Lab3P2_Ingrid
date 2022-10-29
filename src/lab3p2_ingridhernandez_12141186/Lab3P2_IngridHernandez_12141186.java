@@ -568,7 +568,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                             System.out.println("==============================");
                             System.out.println("Ingrese la opcion:");
                             int va  = lea.nextInt();
-                            if (va= = 1) {
+                            if (va== 1) {
                                 System.out.println("=================================");
                                 System.out.println("Ingrese el tipo de mago");
                                 System.out.println("1.Mago Blanco");
