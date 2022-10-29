@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-
 /**
  *
  * @author ADMINISTRADOR1
@@ -16,6 +15,7 @@ import java.util.Scanner;
 public class Lab3P2_IngridHernandez_12141186 {
 
     static ArrayList<Personaje> per = new ArrayList();
+
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner lea = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Lab3P2_IngridHernandez_12141186 {
         defaultpersonajes();
         int hp = 0;
         boolean centinela = true;
-        
+
         while (centinela == true) {
             System.out.println("===========Menu Principal============");
             System.out.println("1)Creacion Personaje");
@@ -37,14 +37,14 @@ public class Lab3P2_IngridHernandez_12141186 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1: {
-                    boolean centinela1 = true;                    
+                    boolean centinela1 = true;
                     while (centinela1 == true) {
                         System.out.println("================SubMENU=================");
-                        System.out.println("Ingrese la clase de personaje");                        
+                        System.out.println("Ingrese la clase de personaje");
                         System.out.println("1)Clerigo ");
                         System.out.println("2)Barbaro ");
                         System.out.println("3)Mago");
-                        System.out.println("4)Picaro");                        
+                        System.out.println("4)Picaro");
                         System.out.println("5)salir");
                         System.out.println("========================================");
                         System.out.println("que clase desea: ");
@@ -62,7 +62,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("============================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                
+
                                 if (tr == 1) {
                                     raza = "Mediano";
                                     hp = 50 + r.nextInt(60);
@@ -85,7 +85,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese el edad del personaje: ");
                                 int edad = lea.nextInt();
                                 int ac = 40;
-                                int cs = 97;                                
+                                int cs = 97;
                                 System.out.println("Ingrese la descripsion del personaje:");
                                 String desp = lea.next();
                                 System.out.println("============================================");
@@ -120,7 +120,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("1-lead");
                                 System.out.println("============================================");
                                 String tp = "Lead";
-                                
+
                                 per.add(new Clerigo(dd, invo, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Clerigo con existo");
                             }
@@ -137,19 +137,19 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("==================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                
+
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                   hp = 50 + r.nextInt(60);
+                                    hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
                                     hp = 80 + r.nextInt(100);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                   hp = 50 + r.nextInt(70);
+                                    hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
-                                   hp = 40 + r.nextInt(75);
+                                    hp = 40 + r.nextInt(75);
                                 } else {
                                     System.out.println("no existe esa raza");
                                 }
@@ -161,7 +161,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 int edad = lea.nextInt();
                                 int ac = 65;
                                 int cs = 93;
-                                
+
                                 System.out.println("Ingrese la descripsion del personaje:");
                                 String desp = lea.next();
                                 System.out.println("=========================================");
@@ -219,17 +219,17 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 if (rv == 1) {
                                     tp = "lead";
                                 } else if (rv == 2) {
-                                    tp = "Support";                                    
+                                    tp = "Support";
                                 } else if (rv == 3) {
-                                    tp = "offensive";                                    
+                                    tp = "offensive";
                                 } else {
                                     System.out.println("No existe tipo de personaje.");
                                 }
-                                
+
                                 per.add(new Barbaro(arm, px, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Barbaro con existo");
                             }
-                            
+
                             break;
                             case 3: {
                                 System.out.println("Ingrese el Nombre del presonaje: ");
@@ -243,7 +243,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("==================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                               
+
                                 if (tr == 1) {
                                     raza = "Mediano";
                                     hp = 50 + r.nextInt(60);
@@ -317,18 +317,18 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("=============================================");
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
-                                String tp = "";                                
+                                String tp = "";
                                 if (rv == 1) {
                                     tp = "Support";
                                 } else if (rv == 2) {
-                                    tp = "Tank";                                    
+                                    tp = "Tank";
                                 } else {
                                     System.out.println("No existe tipo de personaje");
-                                    
+
                                 }
                                 per.add(new Mago(mag, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Mago con existo");
-                            }                            
+                            }
                             break;
                             case 4: {
                                 System.out.println("Ingrese el Nombre del presonaje: ");
@@ -342,16 +342,16 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("=================================");
                                 int tr = lea.nextInt();
                                 String raza = "";
-                                
+
                                 if (tr == 1) {
                                     raza = "Mediano";
-                                   hp = 50 + r.nextInt(60);
+                                    hp = 50 + r.nextInt(60);
                                 } else if (tr == 2) {
                                     raza = "Enano";
                                     hp = 80 + r.nextInt(1000);
                                 } else if (tr == 3) {
                                     raza = "Elfo";
-                                   hp = 50 + r.nextInt(70);
+                                    hp = 50 + r.nextInt(70);
                                 } else if (tr == 4) {
                                     raza = "Humano";
                                     hp = 40 + r.nextInt(75);
@@ -418,58 +418,56 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("==========================================");
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
-                                String tp = "";                                
+                                String tp = "";
                                 if (rv == 1) {
                                     tp = "Spammer";
                                 } else if (rv == 2) {
-                                    tp = "Tank";                                    
+                                    tp = "Tank";
                                 } else {
                                     System.out.println("No existe tipo de personaje");
-                                    
+
                                 }
                                 per.add(new Picaro(mag, robo, nom, raza, estatura, peso, edad, ac, cs, hp, desp, nac, tp));
                                 System.out.println("ya se agrego la clase Picaro con existo");
-                            }                            
+                            }
                             break;
                             case 5:
                                 centinela1 = false;
                                 break;
-                            
+
                             default:
                                 System.out.println("Opcion Incorrecta");
-                        }                        
+                        }
                     }
-                    
+
                 }//fin del case 1
                 break;
                 case 2: {
                     System.out.println("Ingrese la posicion del Personaje:");
                     int pos = lea.nextInt();
                     if (pos < per.size()) {
-                        if(per.get(pos)instanceof Clerigo){
+                        if (per.get(pos) instanceof Clerigo) {
                             System.out.println("====================================================");
                             System.out.println("Que quieres modificar");
                             System.out.println("1-)la Creancia si es un  Dios o Demonio al Sirve ");
-                          System.out.println("2-)La invocacion ");
-                          System.out.println("3-)Tipo de Personaje");
+                            System.out.println("2-)La invocacion ");
+                            System.out.println("3-)Tipo de Personaje");
                             System.out.println("=====================================================");
                             System.out.println("Ingrese su opcion:");
                             int pc = lea.nextInt();
-                           if(pc == 1){
-                               System.out.println("Ingrese la nueva Creancia del personaje :");
-                              String dd =lea.next();
-                              ((Clerigo) per.get(pos)).setDios(dd);
-                               System.out.println("Modificacion Exitosa");
-                           }
-                           else if(pc == 2){
-                               System.out.println("Ingrese su nueva invonacion:");
-                               String invo = lea.next();
+                            if (pc == 1) {
+                                System.out.println("Ingrese la nueva Creancia del personaje :");
+                                String dd = lea.next();
+                                ((Clerigo) per.get(pos)).setDios(dd);
+                                System.out.println("Modificacion Exitosa");
+                            } else if (pc == 2) {
+                                System.out.println("Ingrese su nueva invonacion:");
+                                String invo = lea.next();
                                 ((Clerigo) per.get(pos)).setInvocacion(invo);
-                               System.out.println("Modificacion Exitosa");
-                           }
-                           else if(pc== 3){
-                               
-                               System.out.println("============================================");
+                                System.out.println("Modificacion Exitosa");
+                            } else if (pc == 3) {
+
+                                System.out.println("============================================");
                                 System.out.println("Ingrese el nuevo tipo de Personaje:");
                                 System.out.println("1-lead");
                                 System.out.println("2-Support ");
@@ -480,32 +478,31 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
                                 String tp = "";
-                                if(rv == 1){
+                                if (rv == 1) {
                                     tp = "lead";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                                }else if(rv == 2){
-                                   System.out.println("No puede poner es tipo de personaje en ta clase");
-                                }else if(rv ==3 ){
-                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                }else if(rv == 4){
-                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                           }else if(rv == 5){
-                                System.out.println("No puede poner es tipo de personaje en ta clase");
-                           }
-                        }else {
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                } else if (rv == 2) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                } else if (rv == 3) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                } else if (rv == 4) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                } else if (rv == 5) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }
+                            } else {
                                 System.out.println("no se puede");
-                           }
-                        }
-                          else if (per.get(pos) instanceof Barbaro ){
-                               System.out.println("=========================================");
-                               System.out.println("Que quieres modificar");
-                               System.out.println("1-)Arma");
-                               System.out.println("2-)El nivel px");
-                               System.out.println("3-)Tipo de Personaje");
-                               System.out.println("=======================================");
-                               System.out.println("Ingrese la opcion:");
-                               int co = lea.nextInt();
-                               if(co == 1){
+                            }
+                        } else if (per.get(pos) instanceof Barbaro) {
+                            System.out.println("=========================================");
+                            System.out.println("Que quieres modificar");
+                            System.out.println("1-)Arma");
+                            System.out.println("2-)El nivel px");
+                            System.out.println("3-)Tipo de Personaje");
+                            System.out.println("=======================================");
+                            System.out.println("Ingrese la opcion:");
+                            int co = lea.nextInt();
+                            if (co == 1) {
                                 System.out.println("==================================");
                                 System.out.println("Ingrese el tipo de arama");
                                 System.out.println("1.Pesada");
@@ -525,16 +522,16 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     arm = "Escudo";
                                     ((Barbaro) per.get(pos)).setArma(arm);
                                 } else {
-                                    
+
                                     System.out.println("No existe otra arma");
                                 }
-                                
-                               }else if(co ==2 ){
-                                   System.out.println("Ingrese el nivel px:");
+
+                            } else if (co == 2) {
+                                System.out.println("Ingrese el nivel px:");
                                 int px = lea.nextInt();
                                 ((Barbaro) per.get(pos)).setPx(px);
-                               }else if( co == 3){
-                                   System.out.println("============================================");
+                            } else if (co == 3) {
+                                System.out.println("============================================");
                                 System.out.println("Ingrese el nuevo tipo de Personaje:");
                                 System.out.println("1-lead");
                                 System.out.println("2-Support ");
@@ -545,34 +542,33 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
                                 String tp = "";
-                                if(rv == 1){
+                                if (rv == 1) {
                                     tp = "lead";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                                }else if(rv == 2){
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                } else if (rv == 2) {
                                     tp = "Supoort";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                                    
-                                }else if(rv ==3 ){
-                                     tp = "offensive";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                                }else if(rv == 4){
+                                    ((Personaje) per.get(pos)).setTp(tp);
+
+                                } else if (rv == 3) {
+                                    tp = "offensive";
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                } else if (rv == 4) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                           }else if(rv == 5){
-                                System.out.println("No puede poner es tipo de personaje en ta clase");
-                           }
-                               }else{
-                                    System.out.println("no se puede");
-                           }
-                           }
-                          else if(per.get(pos) instanceof Mago){
-                              System.out.println("==============================");
-                              System.out.println("Que quieres modificar"); 
-                              System.out.println("1-)Tipo de mago");
-                              System.out.println("2-)Tipo de Personaje");
-                              System.out.println("==============================");
-                              System.out.println("Ingrese la opcion:");
-                             int va =lea.nextInt();
-                             if(va== 1){
+                                } else if (rv == 5) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }
+                            } else {
+                                System.out.println("no se puede");
+                            }
+                        } else if (per.get(pos) instanceof Mago) {
+                            System.out.println("==============================");
+                            System.out.println("Que quieres modificar");
+                            System.out.println("1-)Tipo de mago");
+                            System.out.println("2-)Tipo de Personaje");
+                            System.out.println("==============================");
+                            System.out.println("Ingrese la opcion:");
+                            int va  = lea.nextInt();
+                            if (va= = 1) {
                                 System.out.println("=================================");
                                 System.out.println("Ingrese el tipo de mago");
                                 System.out.println("1.Mago Blanco");
@@ -593,9 +589,9 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     ((Mago) per.get(pos)).setTipodeMagia(mag);
                                 } else {
                                     System.out.println("No existe otra tipo de mago");
-                                } 
-                             }else if(va == 2){
-                                 System.out.println("============================================");
+                                }
+                            } else if (va  == 2) {
+                                System.out.println("============================================");
                                 System.out.println("Ingrese el nuevo tipo de Personaje:");
                                 System.out.println("1-lead");
                                 System.out.println("2-Support ");
@@ -606,34 +602,33 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
                                 String tp = "";
-                                if(rv == 1){
+                                if (rv == 1) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                    
-                                }else if(rv == 2){
+
+                                } else if (rv == 2) {
                                     tp = "Support";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                                }else if(rv ==3 ){
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                } else if (rv == 3) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                }else if(rv == 4){
+                                } else if (rv == 4) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                           }else if(rv == 5){
-                                tp = "Tank";
-                                ((Personaje)per.get(pos)).setTp(tp);
-                           }
-                             }else{
-                                 System.out.println("no se puede");
-                             }
-                           }
-                          else if(per.get(pos) instanceof Picaro){
-                              System.out.println("===============================");
-                              System.out.println("Que quieres modificar");
-                              System.out.println("1-)Tipo de Instrumento");
-                              System.out.println("2-)Cantidad de robo existosos");
-                              System.out.println("3-)Tipo de personaje");
-                              System.out.println("===============================");
+                                } else if (rv == 5) {
+                                    tp = "Tank";
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                }
+                            } else {
+                                System.out.println("no se puede");
+                            }
+                        } else if (per.get(pos) instanceof Picaro) {
+                            System.out.println("===============================");
+                            System.out.println("Que quieres modificar");
+                            System.out.println("1-)Tipo de Instrumento");
+                            System.out.println("2-)Cantidad de robo existosos");
+                            System.out.println("3-)Tipo de personaje");
+                            System.out.println("===============================");
                             System.out.println("Ingrese la opcion:");
                             int c = lea.nextInt();
-                            if(c ==1){
+                            if (c == 1) {
                                 System.out.println("======================================");
                                 System.out.println("el tipo de instrumento:");
                                 System.out.println("1.Amuleto");
@@ -655,14 +650,12 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 } else {
                                     System.out.println("No existe otra tipo de instrumento");
                                 }
-                            }
-                            else if(c==2){
+                            } else if (c == 2) {
                                 System.out.println("Ingrese la nueva cantidad de los robos exitosos:");
-                                int cant =lea.nextInt();
-                                 ((Picaro) per.get(pos)).setCantrobo(cant);
-                            }
-                            else if(c == 3){
-                                 System.out.println("============================================");
+                                int cant = lea.nextInt();
+                                ((Picaro) per.get(pos)).setCantrobo(cant);
+                            } else if (c == 3) {
+                                System.out.println("============================================");
                                 System.out.println("Ingrese el nuevo tipo de Personaje:");
                                 System.out.println("1-lead");
                                 System.out.println("2-Support ");
@@ -673,24 +666,24 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese le Tipo de Personaje:");
                                 int rv = lea.nextInt();
                                 String tp = "";
-                                if(rv == 1){
+                                if (rv == 1) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                    
-                                }else if(rv == 2){
+
+                                } else if (rv == 2) {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                }else if(rv ==3 ){
-                                     System.out.println("No puede poner es tipo de personaje en ta clase");
-                                }else if(rv == 4){
+                                } else if (rv == 3) {
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                } else if (rv == 4) {
                                     tp = "Spammer";
-                                    ((Personaje)per.get(pos)).setTp(tp);
-                           }else if(rv == 5){
-                                tp = "Tank";
-                                ((Personaje)per.get(pos)).setTp(tp);
-                           }
-                             }else{
-                                 System.out.println("no se puede");
-                             }
-                          }
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                } else if (rv == 5) {
+                                    tp = "Tank";
+                                    ((Personaje) per.get(pos)).setTp(tp);
+                                }
+                            } else {
+                                System.out.println("no se puede");
+                            }
+                        }
                         boolean centinela3 = true;
                         while (centinela3 == true) {
                             System.out.println("==========================================");
@@ -712,7 +705,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     String nom = lea.next();
                                     ((Personaje) per.get(pos)).setNombre(nom);
                                     System.out.println("Modifico existosamente");
-                                   
+
                                 }//fin del case 1
                                 break;
                                 case 2: {
@@ -725,10 +718,10 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     System.out.println("=================================");
                                     int tr = lea.nextInt();
                                     String raza = "";
-                                    
+
                                     if (tr == 1) {
                                         raza = "Mediano";
-                                       hp = 50 + r.nextInt(60);
+                                        hp = 50 + r.nextInt(60);
                                     } else if (tr == 2) {
                                         raza = "Enano";
                                         hp = 80 + r.nextInt(100);
@@ -737,7 +730,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                         hp = 50 + r.nextInt(70);
                                     } else if (tr == 4) {
                                         raza = "Humano";
-                                       hp = 40 + r.nextInt(75);
+                                        hp = 40 + r.nextInt(75);
                                     } else {
                                         System.out.println("no existe esa raza");
                                     }
@@ -748,31 +741,31 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 case 3: {
                                     System.out.println("Ingrese la nueva estatura del personaje: ");
                                     double estatura = lea.nextDouble();
-                                    
+
                                     ((Personaje) per.get(pos)).setEstaura(estatura);
-                                    System.out.println("Modifico existosamente");                                    
-                                    
+                                    System.out.println("Modifico existosamente");
+
                                 }//fin del case 3
                                 break;
                                 case 4: {
                                     System.out.println("Ingrese el nuevo peso del Personaje: ");
                                     double peso = lea.nextDouble();
                                     ((Personaje) per.get(pos)).setPeso(peso);
-                                    System.out.println("Modifico existosamente");                                    
+                                    System.out.println("Modifico existosamente");
                                 }//fin del case 4
                                 break;
                                 case 5: {
                                     System.out.println("Ingrese el nuevo edad del personaje: ");
                                     int edad = lea.nextInt();
                                     ((Personaje) per.get(pos)).setEdad(edad);
-                                    System.out.println("Modifico existosamente");                                    
+                                    System.out.println("Modifico existosamente");
                                 }//fin del case 5
                                 break;
                                 case 6: {
                                     System.out.println("Ingrese la descripsion del personaje:");
                                     String desp = lea.next();
                                     ((Personaje) per.get(pos)).setDescripcion(desp);
-                                    System.out.println("Modifico existosamente");                                    
+                                    System.out.println("Modifico existosamente");
                                 }//fin del case 6
                                 break;
                                 case 7: {
@@ -806,13 +799,13 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 case 8:
                                     centinela3 = false;
                                     break;
-                                
+
                                 default:
                                     System.out.println("Opcion Incorrecta");
                             }//fin del switch
                         }//fin while
                     }
-                    
+
                 }//fin del case 2
                 break;
                 case 3: {
@@ -821,7 +814,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                             String message = String.format("[%d] %s%n", per.indexOf(object), object);
                             System.out.println(message);
                         }
-                    }                    
+                    }
                 }//fin del case 3
                 break;
                 case 4: {
@@ -830,10 +823,10 @@ public class Lab3P2_IngridHernandez_12141186 {
                     if (p < per.size() && per.get(p) instanceof Personaje) {
                         per.remove(p);
                         System.out.println("Personaje Eliminado");
-                        
+
                     } else {
                         System.out.println("No existe el aula que busca");
-                        
+
                     }
                 }//fin del case 3
                 break;
@@ -889,7 +882,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                 case 6:
                     centinela = false;
                     break;
-                
+
                 default:
                     System.out.println("Opcion Incorrecta");
             }//fin del switch
