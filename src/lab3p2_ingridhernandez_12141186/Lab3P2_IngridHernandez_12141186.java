@@ -111,7 +111,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 } else {
                                     System.out.println("No existe esa nacionalidad");
                                 }
-                                System.out.println("Ingrese a que que Dios o Demonio Sirve: ");
+                                System.out.println("Ingrese la Creancia si es un  Dios o Demonio al Sirve: ");
                                 String dd = lea.next();
                                 System.out.println("Ingrese la invocacion: ");
                                 String invo = lea.next();
@@ -311,7 +311,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     System.out.println("No existe otra tipo de mago");
                                 }
                                 System.out.println("=============================================");
-                                System.out.println("Tipo del personaje esta clase Barbaro es:");
+                                System.out.println("Tipo del personaje esta clase mago es:");
                                 System.out.println("1-Support");
                                 System.out.println("2-Tank");
                                 System.out.println("=============================================");
@@ -412,7 +412,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese la cantidad de robos exitosos:");
                                 int robo = lea.nextInt();
                                 System.out.println("==========================================");
-                                System.out.println("Tipo del personaje esta clase Barbaro es");
+                                System.out.println("Tipo del personaje esta clase picaro es");
                                 System.out.println("1-Spammer");
                                 System.out.println("2-Tank");
                                 System.out.println("==========================================");
@@ -446,7 +446,251 @@ public class Lab3P2_IngridHernandez_12141186 {
                     System.out.println("Ingrese la posicion del Personaje:");
                     int pos = lea.nextInt();
                     if (pos < per.size()) {
-                        
+                        if(per.get(pos)instanceof Clerigo){
+                            System.out.println("====================================================");
+                            System.out.println("Que quieres modificar");
+                            System.out.println("1-)la Creancia si es un  Dios o Demonio al Sirve ");
+                          System.out.println("2-)La invocacion ");
+                          System.out.println("3-)Tipo de Personaje");
+                            System.out.println("=====================================================");
+                            System.out.println("Ingrese su opcion:");
+                            int pc = lea.nextInt();
+                           if(pc == 1){
+                               System.out.println("Ingrese la nueva Creancia del personaje :");
+                              String dd =lea.next();
+                              ((Clerigo) per.get(pos)).setDios(dd);
+                               System.out.println("Modificacion Exitosa");
+                           }
+                           else if(pc == 2){
+                               System.out.println("Ingrese su nueva invonacion:");
+                               String invo = lea.next();
+                                ((Clerigo) per.get(pos)).setInvocacion(invo);
+                               System.out.println("Modificacion Exitosa");
+                           }
+                           else if(pc== 3){
+                               
+                               System.out.println("============================================");
+                                System.out.println("Ingrese el nuevo tipo de Personaje:");
+                                System.out.println("1-lead");
+                                System.out.println("2-Support ");
+                                System.out.println("3-offensive");
+                                System.out.println("4-spammer");
+                                System.out.println("5-Tank");
+                                System.out.println("=============================================");
+                                System.out.println("Ingrese le Tipo de Personaje:");
+                                int rv = lea.nextInt();
+                                String tp = "";
+                                if(rv == 1){
+                                    tp = "lead";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                }else if(rv == 2){
+                                   System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }else if(rv ==3 ){
+                                     System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }else if(rv == 4){
+                                     System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }else if(rv == 5){
+                                System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }
+                        }else {
+                                System.out.println("no se puede");
+                           }
+                        }
+                          else if (per.get(pos) instanceof Barbaro ){
+                               System.out.println("=========================================");
+                               System.out.println("Que quieres modificar");
+                               System.out.println("1-)Arma");
+                               System.out.println("2-)El nivel px");
+                               System.out.println("3-)Tipo de Personaje");
+                               System.out.println("=======================================");
+                               System.out.println("Ingrese la opcion:");
+                               int co = lea.nextInt();
+                               if(co == 1){
+                                System.out.println("==================================");
+                                System.out.println("Ingrese el tipo de arama");
+                                System.out.println("1.Pesada");
+                                System.out.println("2.Ligera");
+                                System.out.println("3.Escudo");
+                                System.out.println("==================================");
+                                System.out.println("Ingrese el tipo de arma:");
+                                int ar = lea.nextInt();
+                                String arm = "";
+                                if (ar == 1) {
+                                    arm = "Pesada";
+                                    ((Barbaro) per.get(pos)).setArma(arm);
+                                } else if (ar == 2) {
+                                    arm = "Ligera";
+                                    ((Barbaro) per.get(pos)).setArma(arm);
+                                } else if (ar == 3) {
+                                    arm = "Escudo";
+                                    ((Barbaro) per.get(pos)).setArma(arm);
+                                } else {
+                                    
+                                    System.out.println("No existe otra arma");
+                                }
+                                
+                               }else if(co ==2 ){
+                                   System.out.println("Ingrese el nivel px:");
+                                int px = lea.nextInt();
+                                ((Barbaro) per.get(pos)).setPx(px);
+                               }else if( co == 3){
+                                   System.out.println("============================================");
+                                System.out.println("Ingrese el nuevo tipo de Personaje:");
+                                System.out.println("1-lead");
+                                System.out.println("2-Support ");
+                                System.out.println("3-offensive");
+                                System.out.println("4-spammer");
+                                System.out.println("5-Tank");
+                                System.out.println("=============================================");
+                                System.out.println("Ingrese le Tipo de Personaje:");
+                                int rv = lea.nextInt();
+                                String tp = "";
+                                if(rv == 1){
+                                    tp = "lead";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                }else if(rv == 2){
+                                    tp = "Supoort";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                    
+                                }else if(rv ==3 ){
+                                     tp = "offensive";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                }else if(rv == 4){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }else if(rv == 5){
+                                System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }
+                               }else{
+                                    System.out.println("no se puede");
+                           }
+                           }
+                          else if(per.get(pos) instanceof Mago){
+                              System.out.println("==============================");
+                              System.out.println("Que quieres modificar"); 
+                              System.out.println("1-)Tipo de mago");
+                              System.out.println("2-)Tipo de Personaje");
+                              System.out.println("==============================");
+                              System.out.println("Ingrese la opcion:");
+                             int va =lea.nextInt();
+                             if(va== 1){
+                                System.out.println("=================================");
+                                System.out.println("Ingrese el tipo de mago");
+                                System.out.println("1.Mago Blanco");
+                                System.out.println("2.Mago Negro");
+                                System.out.println("3.Sanador");
+                                System.out.println("=================================");
+                                System.out.println("Ingrese el tipo de mago:");
+                                int ar = lea.nextInt();
+                                String mag = "";
+                                if (ar == 1) {
+                                    mag = "Mago Blanco";
+                                    ((Mago) per.get(pos)).setTipodeMagia(mag);
+                                } else if (ar == 2) {
+                                    mag = "Mago Negro";
+                                    ((Mago) per.get(pos)).setTipodeMagia(mag);
+                                } else if (ar == 3) {
+                                    mag = "Sanador";
+                                    ((Mago) per.get(pos)).setTipodeMagia(mag);
+                                } else {
+                                    System.out.println("No existe otra tipo de mago");
+                                } 
+                             }else if(va == 2){
+                                 System.out.println("============================================");
+                                System.out.println("Ingrese el nuevo tipo de Personaje:");
+                                System.out.println("1-lead");
+                                System.out.println("2-Support ");
+                                System.out.println("3-offensive");
+                                System.out.println("4-spammer");
+                                System.out.println("5-Tank");
+                                System.out.println("=============================================");
+                                System.out.println("Ingrese le Tipo de Personaje:");
+                                int rv = lea.nextInt();
+                                String tp = "";
+                                if(rv == 1){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                    
+                                }else if(rv == 2){
+                                    tp = "Support";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                }else if(rv ==3 ){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }else if(rv == 4){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }else if(rv == 5){
+                                tp = "Tank";
+                                ((Personaje)per.get(pos)).setTp(tp);
+                           }
+                             }else{
+                                 System.out.println("no se puede");
+                             }
+                           }
+                          else if(per.get(pos) instanceof Picaro){
+                              System.out.println("===============================");
+                              System.out.println("Que quieres modificar");
+                              System.out.println("1-)Tipo de Instrumento");
+                              System.out.println("2-)Cantidad de robo existosos");
+                              System.out.println("3-)Tipo de personaje");
+                              System.out.println("===============================");
+                            System.out.println("Ingrese la opcion:");
+                            int c = lea.nextInt();
+                            if(c ==1){
+                                System.out.println("======================================");
+                                System.out.println("el tipo de instrumento:");
+                                System.out.println("1.Amuleto");
+                                System.out.println("2.Arma");
+                                System.out.println("3.Piedra Antigua");
+                                System.out.println("======================================");
+                                System.out.println("Ingrese el tipo de instrumento:");
+                                int ar = lea.nextInt();
+                                String mag = "";
+                                if (ar == 1) {
+                                    mag = "Amuleto";
+                                    ((Picaro) per.get(pos)).setTipoInstrumento(mag);
+                                } else if (ar == 2) {
+                                    mag = "Arma";
+                                    ((Picaro) per.get(pos)).setTipoInstrumento(mag);
+                                } else if (ar == 3) {
+                                    mag = "Piedra Antigua";
+                                    ((Picaro) per.get(pos)).setTipoInstrumento(mag);
+                                } else {
+                                    System.out.println("No existe otra tipo de instrumento");
+                                }
+                            }
+                            else if(c==2){
+                                System.out.println("Ingrese la nueva cantidad de los robos exitosos:");
+                                int cant =lea.nextInt();
+                                 ((Picaro) per.get(pos)).setCantrobo(cant);
+                            }
+                            else if(c == 3){
+                                 System.out.println("============================================");
+                                System.out.println("Ingrese el nuevo tipo de Personaje:");
+                                System.out.println("1-lead");
+                                System.out.println("2-Support ");
+                                System.out.println("3-offensive");
+                                System.out.println("4-spammer");
+                                System.out.println("5-Tank");
+                                System.out.println("=============================================");
+                                System.out.println("Ingrese le Tipo de Personaje:");
+                                int rv = lea.nextInt();
+                                String tp = "";
+                                if(rv == 1){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                    
+                                }else if(rv == 2){
+                                    tp = "Support";
+                                    ((Personaje)per.get(pos)).setTp(tp);
+                                }else if(rv ==3 ){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                }else if(rv == 4){
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                           }else if(rv == 5){
+                                tp = "Tank";
+                                ((Personaje)per.get(pos)).setTp(tp);
+                           }
+                             }else{
+                                 System.out.println("no se puede");
+                             }
+                          }
                         boolean centinela3 = true;
                         while (centinela3 == true) {
                             System.out.println("==========================================");
@@ -468,6 +712,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     String nom = lea.next();
                                     ((Personaje) per.get(pos)).setNombre(nom);
                                     System.out.println("Modifico existosamente");
+                                   
                                 }//fin del case 1
                                 break;
                                 case 2: {
