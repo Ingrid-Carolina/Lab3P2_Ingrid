@@ -677,12 +677,12 @@ public class Lab3P2_IngridHernandez_12141186 {
                                     System.out.println("No puede poner es tipo de personaje en ta clase");
                                     
                                 }else if(rv == 2){
-                                    tp = "Support";
-                                    ((Personaje)per.get(pos)).setTp(tp);
+                                    System.out.println("No puede poner es tipo de personaje en ta clase");
                                 }else if(rv ==3 ){
-                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                     System.out.println("No puede poner es tipo de personaje en ta clase");
                                 }else if(rv == 4){
-                                    System.out.println("No puede poner es tipo de personaje en ta clase");
+                                    tp = "Spammer";
+                                    ((Personaje)per.get(pos)).setTp(tp);
                            }else if(rv == 5){
                                 tp = "Tank";
                                 ((Personaje)per.get(pos)).setTp(tp);
