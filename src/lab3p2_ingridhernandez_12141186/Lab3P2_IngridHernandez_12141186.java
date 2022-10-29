@@ -839,6 +839,51 @@ public class Lab3P2_IngridHernandez_12141186 {
                 break;
                 case 5: {
                     //Combate
+                    System.out.println("Ingrese la posicion del Personaje:");
+                    int pos = lea.nextInt();
+                    if (pos <= per.size() - 1 && per.get(pos) instanceof Personaje) {
+                        for (Object object : per) {
+                            if (object instanceof Personaje) {
+                                String message = String.format("[%d] %s%n", per.indexOf(object), object);
+                                System.out.println(message);
+                            }
+                        }
+                        System.out.println("Selecione el personaje contra quien desea jugar: ");
+                        int pos2 = lea.nextInt();
+                        if (pos2 == pos) {
+                            if (pos2 <= per.size() - 1 && per.get(pos2) instanceof Personaje) {
+                                double hpj1 = ((Personaje) per.get(pos)).getHp();
+                                double hpj2 = ((Personaje) per.get(pos2)).getHp();
+                                double DM = 0;
+                                double DM2 = 0;
+                                if (per.get(pos) instanceof Clerigo || per.get(pos2) instanceof Clerigo) {
+                                    if (per.get(pos) instanceof Clerigo) {
+                                        DM = 5 + r.nextInt(15);
+                                    } else if (per.get(pos2) instanceof Clerigo) {
+                                        DM2 = 5 + r.nextInt(15);
+                                    }
+                                } else if (per.get(pos) instanceof Barbaro || per.get(pos2) instanceof Barbaro) {
+                                    if (per.get(pos) instanceof Barbaro) {
+                                        DM = 15 + r.nextInt(30);
+                                    } else if (per.get(pos2) instanceof Barbaro) {
+                                        DM2 = 15 + r.nextInt(30);
+                                    }
+                                } else if (per.get(pos) instanceof Mago || per.get(pos2) instanceof Mago) {
+                                    if (per.get(pos) instanceof Mago) {
+                                        DM = 5 + r.nextInt(10);
+                                    } else if (per.get(pos2) instanceof Mago) {
+                                        DM2 = 5 + r.nextInt(10);
+                                    }
+                                } else if (per.get(pos) instanceof Picaro || per.get(pos2) instanceof Picaro) {
+                                    if (per.get(pos) instanceof Picaro) {
+                                        DM = 15 + r.nextInt(20);
+                                    } else if (per.get(pos2) instanceof Picaro) {
+                                        DM2 = 15 + r.nextInt(20);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }//fin del case 3
                 break;
                 case 6:
