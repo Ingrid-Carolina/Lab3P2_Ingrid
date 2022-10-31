@@ -834,7 +834,7 @@ public class Lab3P2_IngridHernandez_12141186 {
                     //Combate
                     System.out.println("Ingrese la posicion del Personaje:");
                     int pos = lea.nextInt();
-                    if (pos <= per.size() - 1 && per.get(pos) instanceof Personaje) {
+                    if (pos <= per.size()-1  && per.get(pos) instanceof Personaje) {
                         for (Object object : per) {
                             if (object instanceof Personaje) {
                                 String message = String.format("[%d] %s%n", per.indexOf(object), object);
@@ -843,12 +843,15 @@ public class Lab3P2_IngridHernandez_12141186 {
                         }
                         System.out.println("Selecione el personaje contra quien desea jugar: ");
                         int pos2 = lea.nextInt();
-                        if (pos2 == pos) {
+                        if (pos2 != pos) {
                             if (pos2 <= per.size() - 1 && per.get(pos2) instanceof Personaje) {
                                 double hpj1 = ((Personaje) per.get(pos)).getHp();
                                 double hpj2 = ((Personaje) per.get(pos2)).getHp();
+                                double CS1 = ((Personaje) per.get(pos)).getCs(), CS2 = ((Personaje) per.get(pos2)).getCs();
+                                double bono = 0, bonoc = 0;
                                 double DM = 0;
                                 double DM2 = 0;
+                                double AC1 = ((Personaje) per.get(pos)).getAc(), AC2 = ((Personaje) per.get(pos2)).getAc();
                                 if (per.get(pos) instanceof Clerigo || per.get(pos2) instanceof Clerigo) {
                                     if (per.get(pos) instanceof Clerigo) {
                                         DM = 5 + r.nextInt(15);
@@ -874,7 +877,139 @@ public class Lab3P2_IngridHernandez_12141186 {
                                         DM2 = 15 + r.nextInt(20);
                                     }
                                 }
+                                if (((Personaje) per.get(pos)).getTp().equals("Lead") || ((Personaje) per.get(pos2)).getTp().equals("Lead")) {
+                                    if (((Personaje) per.get(pos)).getTp().equals("Lead") && (per.get(pos) instanceof Clerigo || per.get(pos) instanceof Barbaro)) {
+                                        bono = CS1 * 0.05;
+                                        CS1 = CS1 + bono;
+                                    } else if (((Personaje) per.get(pos2)).getTp().equals("Lead") && (per.get(pos2) instanceof Clerigo || per.get(pos2) instanceof Barbaro)) {
+                                        bono = CS2 * 0.05;
+                                        CS2 = CS2 + bono;
+                                    }
+                                } else if (((Personaje) per.get(pos)).getTp().equals("Support") || ((Personaje) per.get(pos2)).getTp().equals("Support")) {
+                                    if (((Personaje) per.get(pos)).getTp().equals("Support") && (per.get(pos) instanceof Mago || per.get(pos) instanceof Barbaro)) {
+                                        bono = CS1 * 0.02;
+                                        CS1 = CS1 + bono;
+                                        bonoc = AC1 * 0.03;
+                                        AC1 = AC1 + bonoc;
+
+                                    } else if (((Personaje) per.get(pos)).getTp().equals("Support") && (per.get(pos2) instanceof Mago || per.get(pos2) instanceof Barbaro)) {
+                                        bono = CS2 * 0.02;
+                                        CS2 = CS2 + bono;
+                                        bonoc = AC2 * 0.03;
+                                        AC2 = AC2 + bonoc;
+                                    }
+                                } else if (((Personaje) per.get(pos)).getTp().equals("Offensive") || ((Personaje) per.get(pos2)).getTp().equals("Offensive")) {
+                                    if (((Personaje) per.get(pos)).getTp().equals("Offensive") && per.get(pos) instanceof Barbaro) {
+                                        bono = DM * 0.05;
+                                        DM = DM + bono;
+                                        hpj1 = hpj1 - (hpj1 * 0.01);
+                                    } else if (((Personaje) per.get(pos2)).getTp().equals("Offensive") && per.get(pos2) instanceof Barbaro) {
+                                        bono = DM2 * 0.05;
+                                        DM2 = DM2 + bono;
+                                        hpj2 = hpj2 - (hpj2 * 0.01);
+                                    }
+                                } else if (((Personaje) per.get(pos)).getTp().equals("Spammer") || ((Personaje) per.get(pos2)).getTp().equals("Spammer")) {
+                                    if (((Personaje) per.get(pos)).getTp().equals("Spammer") && per.get(pos) instanceof Picaro) {
+                                        bonoc = AC1 * 0.02;
+                                        AC1 = AC1 + bonoc;
+                                        bono = DM * 0.03;
+                                        DM = DM + bono;
+                                        CS1 = CS1 - (CS1 * 0.01);
+                                    } else if (((Personaje) per.get(pos2)).getTp().equals("Spammer") && per.get(pos2) instanceof Picaro) {
+                                        bonoc = AC1 * 0.02;
+                                        AC2 = AC2 + bonoc;
+                                        bono = DM2 * 0.03;
+                                        DM2 = DM2 + bono;
+                                        CS1 = CS1 - (CS1 * 0.01);
+                                    }
+                                } else if (((Personaje) per.get(pos)).getTp().equals("Tank") || ((Personaje) per.get(pos2)).getTp().equals("Tank")) {
+                                    if (((Personaje) per.get(pos)).getTp().equals("Tank") && (per.get(pos) instanceof Mago || per.get(pos) instanceof Picaro)) {
+                                        hpj1 = hpj1 + (hpj1 * 0.02);
+                                    } else if (((Personaje) per.get(pos2)).getTp().equals("Tank") && (per.get(pos2) instanceof Mago || per.get(pos2) instanceof Picaro)) {
+                                        hpj2 = hpj2 + (hpj2 * 0.02);
+                                    }
+                                }
+                                while (hpj1 > 0 && hpj2 > 0) {
+                                    System.out.println("Turno Jugador 1: (Usuario)");
+                                    System.out.println("Desea \n 1. Atacar?"
+                                            + "\n2. Defender?");
+                                    int ad = lea.nextInt();
+                                    boolean flag0 = false;
+                                    while (flag0 == false) {
+                                        switch (ad) {
+                                            case 1:
+                                                int ard = 1 + r.nextInt(100);
+                                                if (ard > AC2) {
+                                                    if (ard > CS2) {
+                                                        DM = DM * 2;
+                                                        hpj2 = hpj2 - DM;
+                                                        System.out.println("Ha acertado el doble del golpe!!");
+                                                    }
+                                                    hpj2 = hpj2 - DM;
+                                                    System.out.println("Ha acertado eL golpe!!");
+                                                } else if (ard < AC2) {
+                                                    System.out.println("No ha hecho daño...");
+
+                                                }
+                                                System.out.println(hpj1);
+                                                System.out.println(hpj2);
+                                                flag0 = true;
+                                                break;
+                                            case 2:
+                                                AC1 = AC1 + 15;
+                                                flag0 = true;
+                                                break;
+                                            default:
+                                                System.out.println("Opcion invalida, intente de nuevo!...");
+                                                flag0 = false;
+                                        }
+
+                                    }
+                                    System.out.println("Turno Jugador 2: ");
+                                    System.out.println("Desea \n 1. Atacar?"
+                                            + "\n2. Defender?");
+                                    int ad1 = lea.nextInt();
+                                    boolean flagp = false;
+                                    while (flagp == false) {
+                                        switch (ad1) {
+                                            case 1:
+                                                int ard = 1 + r.nextInt(100);
+                                                if (ard > AC1) {
+                                                    if (ard > CS2) {
+                                                        DM2 = DM2 * 2;
+                                                        hpj1 = hpj1 - DM2;
+                                                        System.out.println("Ha acertado el doble del golpe!!");
+                                                    }
+                                                    hpj1 = hpj1 - DM2;
+                                                    System.out.println("Ha acertado eL golpe!!");
+                                                } else if (ard < AC1) {
+                                                    System.out.println("No ha hecho daño...");
+
+                                                }
+                                                System.out.println(hpj1);
+                                                System.out.println(hpj2);
+                                                flagp = true;
+                                                break;
+                                            case 2:
+                                                AC1 = AC1 + 15;
+                                                flagp = true;
+                                                break;
+                                            default:
+                                                System.out.println("Opcion invalida, intente de nuevo!...");
+                                                flagp = false;
+                                        }
+                                    }
+                                }
+                                System.out.println("El juego ha terminado...");
+                                if (hpj1 > hpj2) {
+                                    System.out.println("El jugador 1 ha ganado");
+                                } else {
+                                    System.out.println("El jugador 2 ha ganado");
+                                }
+
                             }
+                        } else {
+                            System.out.println("No puede seleccionarse a si mismo");
                         }
                     }
                 }//fin del case 3
@@ -895,4 +1030,5 @@ public class Lab3P2_IngridHernandez_12141186 {
         per.add(new Mago("Sanador", "Juan", "Mediano", 9.3, 4.6, 29, 20, 101, 54, "Fuerte", "Norfair", "Tank"));
         per.add(new Mago("Mago Negro", "luis", "Enano", 6.5, 8.4, 29, 20, 101, 85, "Veloz", "Brinstar", "Support"));
     }
+
 }
